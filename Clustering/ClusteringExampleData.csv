@@ -1,0 +1,26 @@
+No,Crude,Gasoline,Diesel,Bitumen,,,No,OS,Browser,Time of Day,Payment,Shipping,Country
+0,422.07,567.02,467.77,411.35,,,0,Linux,Firefox,18:00-24:00,Prepaid,Standard,Germany
+1,346.70,567.16,598.84,328.58,,,1,Windows,Firefox,12:00-18:00,Paypal,Standard,Germany
+2,271.82,453.79,427.3,259.16,,,2,Other,Other,6:00-12:00,Prepaid,Standard,Germany
+3,437.53,665.83,535.59,339.12,,,3,Windows,Firefox,18:00-24:00,Credit Card,Standard,Germany
+4,433.54,636.73,604.32,509.87,,,4,Windows,Chrome,18:00-24:00,Credit Card,Standard,Switzerland
+5,288.19,549.87,441.44,198.64,,,5,Linux,Firefox,0:00-6:00,Prepaid,Standard,Austria
+6,315.69,504.96,388.12,247.89,,,6,MacOS,Safari,12:00-18:00,Credit Card,Premium,Switzerland
+7,322.30,478.54,486.68,257.94,,,7,Windows,IE,12:00-18:00,Prepaid,Standard,Austria
+8,261.64,431.00,415.55,276.04,,,8,MacOS,Safari,18:00-24:00,Credit Card,Premium,Switzerland
+9,428.09,585.34,483.46,357.18,,,9,MacOS,Chrome,6:00-12:00,Paypal,Standard,Germany
+10,481.25,742.07,577.75,463.81,,,10,Windows,Firefox,0:00-6:00,Credit Card,Standard,Germany
+11,303.73,501.73,444.35,217.21,,,11,Windows,Chrome,12:00-18:00,Credit Card,Standard,Austria
+12,411.30,577.65,553.62,254.90,,,12,MacOS,Chrome,12:00-18:00,Credit Card,Premium,Liechtenstein
+13,268.99,480.75,431.16,232.36,,,13,MacOS,Safari,18:00-24:00,Prepaid,Premium,Germany
+14,569.46,680.85,519.92,441.69,,,14,Linux,Firefox,18:00-24:00,Paypal,Standard,Austria
+15,521.29,657.70,551.93,493.04,,,15,Windows,Firefox,18:00-24:00,Prepaid,Standard,Switzerland
+16,360.15,621.81,526.70,285.38,,,16,Linux,Other,0:00-6:00,Prepaid,Standard,Japan
+17,531.54,692.90,621.71,343.83,,,17,Windows,Firefox,0:00-6:00,Prepaid,Standard,Austria
+18,410.98,650.63,527.75,334.98,,,18,Windows,Chrome,12:00-18:00,Prepaid,Premium,Germany
+19,318.95,506.15,479.32,237.15,,,19,Windows,Chrome,18:00-24:00,Paypal,Standard,Austria
+20,415.79,667.41,543.82,391.42,,,20,Windows,IE,18:00-24:00,Prepaid,Standard,Germany
+,,,,,,,21,Windows,Chrome,6:00-12:00,Paypal,Premium,Switzerland
+,,,,,,,22,MacOS,Safari,12:00-18:00,Credit Card,Standard,Germany
+,,,,,,,23,Windows,Chrome,18:00-24:00,Credit Card,Standard,Belgium
+,,,,,,,24,Windows,Chrome,12:00-18:00,Prepaid,Premium,Germany
