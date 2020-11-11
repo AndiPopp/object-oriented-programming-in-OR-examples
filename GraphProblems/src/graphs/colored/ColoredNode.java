@@ -34,7 +34,7 @@ public class ColoredNode extends UndirectedNode {
 					ColoredNode neighbor = (ColoredNode) edge.getEnd();
 					colorUsed = (neighbor.color == color);
 				}else if (edge.getEnd() == this 
-                        && edge.getStart() instanceof ColoredNode){
+						&& edge.getStart() instanceof ColoredNode){
 					ColoredNode neighbor = (ColoredNode) edge.getStart();
 					colorUsed = (neighbor.color == color);
 				}
