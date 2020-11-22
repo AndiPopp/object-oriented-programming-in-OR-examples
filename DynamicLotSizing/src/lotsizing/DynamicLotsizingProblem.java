@@ -19,10 +19,10 @@ public class DynamicLotsizingProblem {
 		this.periods = periods;
 	}
 	
-	//calculates the partial objective function for a lot,
+	//calculates the costs for a single lot,
 	//i.e. C(setup, nextSetup) + C*(nextSetup)
-	public double calcPartialObjective(int setup, int nextSetup){
-		//count the demand to get the lotsize
+	public double calcLotCosts(int setup, int nextSetup){
+		//count the demand to get the lot size
 		double lotSize = 0;
 		for(int i = setup; i < nextSetup; i++){
 			lotSize += periods[i].getDemand();
@@ -52,18 +52,18 @@ public class DynamicLotsizingProblem {
 	private void solve(int setup){
 		//initialize with single period lot
 		periods[setup].setPartialOpt(
-				calcPartialObjective(setup, setup+1));
+				calcLotCosts(setup, setup+1));
 		periods[setup].setNextSetup(setup+1);
 		
 		//go through rest of the time frame
 		for(int i = setup+2; i < periods.length+1; i++){
 			//check if this partial solution is better
-			if (calcPartialObjective(setup, i) <
+			if (calcLotCosts(setup, i) <
 				periods[setup].getPartialOpt()){
 				
 				//save this partial solution
 				periods[setup].setPartialOpt(
-						calcPartialObjective(setup, i));
+						calcLotCosts(setup, i));
 				periods[setup].setNextSetup(i);
 			}
 		}
