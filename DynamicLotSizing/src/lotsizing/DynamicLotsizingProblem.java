@@ -29,23 +29,23 @@ public class DynamicLotsizingProblem {
 		}
 		
 		//start with the setup cost
-		double partialObj = setupCost;
+		double lotCosts = setupCost;
 		
 		//calculate the inventory at the end of each period
 		//and add the inventory costs 
 		for(int i = setup; i < nextSetup; i++){
 			lotSize -= periods[i].getDemand();
-			partialObj += inventoryCost * lotSize;
+			lotCosts += inventoryCost * lotSize;
 		}
 		
 		//if the next setup period is within the time frame
 		//of our problem, add its partial objective function
 		if (nextSetup < periods.length) {
-			partialObj += periods[nextSetup].getPartialOpt();
+			lotCosts += periods[nextSetup].getPartialOpt();
 		}
 		
 		//return the value
-		return partialObj;
+		return lotCosts;
 	}
 	
 	//solves a single setup period
