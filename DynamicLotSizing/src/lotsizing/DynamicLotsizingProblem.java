@@ -19,9 +19,9 @@ public class DynamicLotsizingProblem {
 		this.periods = periods;
 	}
 	
-	//calculates the costs for a single lot,
+	//calculates the partial objective function for time frame setup...T,
 	//i.e. C(setup, nextSetup) + C*(nextSetup)
-	public double calcLotCosts(int setup, int nextSetup){
+	public double calcPartialObjective(int setup, int nextSetup){
 		//count the demand to get the lot size
 		double lotSize = 0;
 		for(int i = setup; i < nextSetup; i++){
@@ -29,41 +29,41 @@ public class DynamicLotsizingProblem {
 		}
 		
 		//start with the setup cost
-		double lotCosts = setupCost;
+		double partialObj = setupCost;
 		
 		//calculate the inventory at the end of each period
 		//and add the inventory costs 
 		for(int i = setup; i < nextSetup; i++){
 			lotSize -= periods[i].getDemand();
-			lotCosts += inventoryCost * lotSize;
+			partialObj += inventoryCost * lotSize;
 		}
 		
 		//if the next setup period is within the time frame
 		//of our problem, add its partial objective function
 		if (nextSetup < periods.length) {
-			lotCosts += periods[nextSetup].getPartialOpt();
+			partialObj += periods[nextSetup].getPartialOpt();
 		}
 		
 		//return the value
-		return lotCosts;
+		return partialObj;
 	}
 	
 	//solves a single setup period
 	private void solve(int setup){
 		//initialize with single period lot
 		periods[setup].setPartialOpt(
-				calcLotCosts(setup, setup+1));
+				calcPartialObjective(setup, setup+1));
 		periods[setup].setNextSetup(setup+1);
 		
 		//go through rest of the time frame
 		for(int i = setup+2; i < periods.length+1; i++){
 			//check if this partial solution is better
-			if (calcLotCosts(setup, i) <
+			if (calcPartialObjective(setup, i) <
 				periods[setup].getPartialOpt()){
 				
 				//save this partial solution
 				periods[setup].setPartialOpt(
-						calcLotCosts(setup, i));
+						calcPartialObjective(setup, i));
 				periods[setup].setNextSetup(i);
 			}
 		}
