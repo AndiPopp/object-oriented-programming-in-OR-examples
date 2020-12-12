@@ -49,15 +49,13 @@ public class Bin {
 	
 	//read the capacity from user input
 	public static void readCapacity(){
-		while (capacity < 0){
-			String userInput = JOptionPane.showInputDialog(
-					"Please enter the bin capacity:");
-			try{
-				capacity = Double.valueOf(userInput);
-			}catch(NumberFormatException ex){
-				System.out.println("Parsing failed "
-						+ ex.getMessage());
-			}
+		String userInput = JOptionPane.showInputDialog(
+				"Please enter the bin capacity:");
+		try{
+			capacity = Double.valueOf(userInput);
+		}catch(NumberFormatException ex){
+			System.out.println("Parsing failed "
+					+ ex.getMessage());
 		}
 	}
 }

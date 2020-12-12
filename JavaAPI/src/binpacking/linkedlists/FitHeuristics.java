@@ -9,7 +9,6 @@ public class FitHeuristics {
 		//let the use input the bin capacity
 		//check that the largest item fits
 		while (Bin.capacity < 9.3){
-			Bin.capacity = -1;
 			Bin.readCapacity();
 		}	
 		
