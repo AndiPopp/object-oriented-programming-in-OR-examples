@@ -9,11 +9,6 @@ import java.util.ArrayList;
  * @param <E> the type of edges connected to this node
  */
 public class UndirectedNode<E extends Edge> extends Node<E> {
-
-	/**
-	 * An array combining inbound and outbound
-	 */
-	private ArrayList<E> neighbors;
 	
 	/**
 	 * constructor setting the node's name
@@ -24,26 +19,17 @@ public class UndirectedNode<E extends Edge> extends Node<E> {
 	}
 	
 	/**
-	 * method to populate {@link #neighbors}
+	 * create neighbors
+	 * @return edges connected to the neighbors
 	 */
-	private void fillNeighbors(){
+	public ArrayList<E> getNeighbors() {
 		int size = getInboud().size()+getOutbound().size();
-		neighbors = new ArrayList<E>(size);
+		ArrayList<E> neighbors = new ArrayList<E>(size);
 		for(E edge : getInboud()){
 			neighbors.add(edge);
 		}
 		for(E edge : getOutbound()){
 			neighbors.add(edge);
-		}
-	}
-	
-	/**
-	 * getter for {@link #neighbors}
-	 * @return the content of the field {@link #neighbors}
-	 */
-	public ArrayList<E> getNeighbors() {
-		if (neighbors == null) {
-			fillNeighbors();
 		}
 		return neighbors;
 	}
